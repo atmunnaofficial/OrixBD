@@ -5,13 +5,13 @@ export default function AboutPage() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-blue-500 text-sm font-semibold uppercase tracking-widest">
-            About OrixBD Group
+            About Orix Group
           </span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mt-3">
             Building Excellence Through Innovation & Trust
           </h1>
           <p className="mt-4 text-lg text-slate-400">
-            OrixBD Group is one of Bangladesh’s leading diversified industrial
+            Orix Group is one of Bangladesh’s leading diversified industrial
             conglomerates, driving progress across textile washing, packaging,
             engineering, denim creation, and agriculture.
           </p>
@@ -47,7 +47,7 @@ export default function AboutPage() {
               Leadership & Management
             </h2>
             <p className="mt-2 text-slate-400">
-              The visionaries behind OrixBD Group
+              The visionaries behind Orix Group
             </p>
           </div>
 
@@ -59,7 +59,7 @@ export default function AboutPage() {
               <h3 className="text-xl font-bold text-white">
                 Managing Director
               </h3>
-              <p className="text-sm text-blue-400 font-medium">OrixBD Group</p>
+              <p className="text-sm text-blue-400 font-medium">Orix Group</p>
               <p className="text-xs text-slate-400 mt-3">
                 Leading strategic growth and industrial expansion.
               </p>
@@ -70,7 +70,7 @@ export default function AboutPage() {
                 C
               </div>
               <h3 className="text-xl font-bold text-white">Chairman</h3>
-              <p className="text-sm text-blue-400 font-medium">OrixBD Group</p>
+              <p className="text-sm text-blue-400 font-medium">Orix Group</p>
               <p className="text-xs text-slate-400 mt-3">
                 Guiding corporate governance and group vision.
               </p>
@@ -78,10 +78,10 @@ export default function AboutPage() {
 
             <div className="bg-slate-900 rounded-2xl p-6 text-center border border-slate-800">
               <div className="w-24 h-24 bg-slate-800 rounded-full mx-auto mb-4 flex items-center justify-center text-blue-400 font-bold text-xl border border-slate-700">
-                ED
+                CEO
               </div>
               <h3 className="text-xl font-bold text-white">
-                Executive Director
+                Chief Executive Officer
               </h3>
               <p className="text-sm text-blue-400 font-medium">Operations</p>
               <p className="text-xs text-slate-400 mt-3">

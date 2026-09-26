@@ -31,7 +31,7 @@ export default function ContactPage() {
       } else {
         setError('Failed to send message. Please try again.');
       }
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred. Please try again later.');
     } finally {
       setLoading(false);
@@ -44,7 +44,7 @@ export default function ContactPage() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl font-extrabold text-white">
-            Contact OrixBD Group
+            Contact Orix Group
           </h1>
           <p className="mt-4 text-slate-400">
             Have an inquiry or business proposal? Reach out to our corporate
@@ -61,7 +61,7 @@ export default function ContactPage() {
 
             <div className="space-y-4 text-slate-300">
               <p className="flex items-start gap-3">
-                <span className="font-semibold text-blue-400 min-w-[80px]">
+                <span className="font-semibold text-blue-400 min-w-20">
                   Address:
                 </span>
                 <span className="text-slate-400">
@@ -69,7 +69,7 @@ export default function ContactPage() {
                 </span>
               </p>
               <p className="flex items-center gap-3">
-                <span className="font-semibold text-blue-400 min-w-[80px]">
+                <span className="font-semibold text-blue-400 min-w-20">
                   Phone:
                 </span>
                 <span className="text-slate-400">
@@ -77,7 +77,7 @@ export default function ContactPage() {
                 </span>
               </p>
               <p className="flex items-center gap-3">
-                <span className="font-semibold text-blue-400 min-w-[80px]">
+                <span className="font-semibold text-blue-400 min-w-20">
                   Email:
                 </span>
                 <span className="text-slate-400">info@orixbd.com</span>
@@ -154,7 +154,7 @@ export default function ContactPage() {
                     type="text"
                     name="name"
                     required
-                    placeholder="John Doe"
+                    placeholder="Your Full Name"
                     className="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-500"
                   />
                 </div>
@@ -167,7 +167,7 @@ export default function ContactPage() {
                     type="email"
                     name="email"
                     required
-                    placeholder="john@example.com"
+                    placeholder="username@email.com"
                     className="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-500"
                   />
                 </div>

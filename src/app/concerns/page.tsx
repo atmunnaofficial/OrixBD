@@ -1,5 +1,5 @@
 import { concernsData } from '@/data/concerns';
-import ConcernCard from '@/components/orixbd/ConcernCard';
+import ConcernCard from '@/components/orix/ConcernCard';
 
 export default function ConcernsPage() {
   return (
@@ -11,7 +11,7 @@ export default function ConcernsPage() {
             Our Business Units
           </span>
           <h1 className="text-4xl font-extrabold text-white mt-3">
-            OrixBD Group Sister Concerns
+            Orix Group Sister Concerns
           </h1>
           <p className="mt-4 text-slate-400 text-base sm:text-lg">
             Discover our diverse portfolio of industries driving sustainable

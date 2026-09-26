@@ -1,8 +1,8 @@
-import HeroSlider from '@/components/orixbd/HeroSlider';
-import WelcomeSection from '@/components/orixbd/WelcomeSection';
-import ConcernsOverview from '@/components/orixbd/ConcernsOverview';
-import CoreStrengths from '@/components/orixbd/CoreStrengths';
-import ComplianceSection from '@/components/orixbd/ComplianceSection';
+import HeroSlider from '@/components/orix/HeroSlider';
+import WelcomeSection from '@/components/orix/WelcomeSection';
+import ConcernsOverview from '@/components/orix/ConcernsOverview';
+import CoreStrengths from '@/components/orix/CoreStrengths';
+import ComplianceSection from '@/components/orix/ComplianceSection';
 
 export default function HomePage() {
   return (

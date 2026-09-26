@@ -2,15 +2,20 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const slides = [
   {
     badge: 'State-of-the-Art Industrial Unit',
-    title: 'Orix Group Infrastructure',
+    title: 'Building Excellence Across Diverse Industries',
     description:
-      'A premier conglomerate driving excellence and innovation across automated garment manufacturing and sustainable processing sectors.',
+      'Orix Group is a leading conglomerate driven by innovation, sustainability, and quality service in Bangladesh.',
     image:
       'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600',
+    primaryButtonText: 'Explore Our Portfolio',
+    primaryButtonLink: '/about',
+    secondaryButtonText: 'Contact Us',
+    secondaryButtonLink: '/contact',
   },
   {
     badge: 'Company Overview',
@@ -19,34 +24,50 @@ const slides = [
       'A world-class sustainable denim and garment laundering facility powered by global cutting-edge processing technology.',
     image:
       'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600',
+    primaryButtonText: 'Visit Washing Unit',
+    primaryButtonLink: '/washing',
+    secondaryButtonText: 'Contact Us',
+    secondaryButtonLink: '/contact',
   },
   {
-    badge: 'Dual-Process Operations',
-    title: 'Wet Processing Unit',
+    badge: 'Packaging & Accessories',
+    title: 'Precision Packaging & Carton Solutions',
     description:
-      'Heavy-duty industrial wash barrels, enzyme treatments, and eco-friendly softening systems delivering premium handfeel and hues.',
+      'State-of-the-art offset printing, eco-friendly corrugated manufacturing, and automated finishing lines for global brands.',
     image:
-      'https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=1600',
+      'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1600',
+    primaryButtonText: 'Visit Packaging Unit',
+    primaryButtonLink: '/packaging',
+    secondaryButtonText: 'Contact Us',
+    secondaryButtonLink: '/contact',
   },
   {
-    badge: 'Advanced Innovation',
-    title: 'Dry Processing Unit',
+    badge: 'Sustainable Manufacturing',
+    title: 'Eco-Friendly Production Standards',
     description:
-      'Precision computerized laser fading, manual scraping, ozone treatment, and 3D resin curing for authentic vintage aesthetics.',
+      'Committed to green energy, waste reduction, and international compliance to ensure sustainable operations across all units.',
     image:
-      'https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=1600',
+      'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1600',
+    primaryButtonText: 'Our Concerns',
+    primaryButtonLink: '/concerns',
+    secondaryButtonText: 'Contact Us',
+    secondaryButtonLink: '/contact',
   },
   {
-    badge: 'Environmental Compliance',
-    title: 'ETP & Zero Liquid Discharge',
+    badge: 'Global Partnerships',
+    title: 'Trusted by Worldwide Brands',
     description:
-      'State-of-the-art Effluent Treatment Plant ensuring up to 80% water recycling and complete adherence to green standards.',
+      'Delivering premium quality products on time with strict quality control, earning the trust of international retail giants.',
     image:
-      'https://images.unsplash.com/photo-1574943320219-553eb213f72d?q=80&w=1600',
+      'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600',
+    primaryButtonText: 'About Our Group',
+    primaryButtonLink: '/about',
+    secondaryButtonText: 'Contact Us',
+    secondaryButtonLink: '/contact',
   },
 ];
 
-export default function WashingHero() {
+export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Auto-play slider every 5 seconds
@@ -97,9 +118,22 @@ export default function WashingHero() {
               {slide.title}
             </h1>
 
-            <p className="text-slate-200 text-sm sm:text-base lg:text-lg max-w-2xl leading-relaxed drop-shadow">
+            <p className="text-slate-200 text-sm sm:text-base lg:text-lg max-w-2xl leading-relaxed drop-shadow mb-8">
               {slide.description}
             </p>
+
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href={slide.primaryButtonLink}
+                className="px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-lg shadow-blue-500/30 transition-all">
+                {slide.primaryButtonText}
+              </Link>
+              <Link
+                href={slide.secondaryButtonLink}
+                className="px-8 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold transition-all backdrop-blur-md shadow-lg">
+                {slide.secondaryButtonText}
+              </Link>
+            </div>
           </div>
         </div>
       ))}
@@ -118,7 +152,7 @@ export default function WashingHero() {
         ❯
       </button>
 
-      {/* Indicators / Dots - Perfectly Positioned (Matching Packaging & Main Page) */}
+      {/* Indicators / Dots - Perfectly Positioned (Not touching bottom edge) */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex space-x-2 sm:space-x-3">
         {slides.map((_, idx) => (
           <button

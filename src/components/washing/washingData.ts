@@ -491,10 +491,10 @@ export const washingCertifications = [
       'https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=800',
   },
   {
-    code: 'WRAP Gold',
-    title: 'Responsible Apparel',
-    issuer: 'WRAP',
-    description: 'Ethical manufacturing conditions.',
+    code: 'RCS',
+    title: 'Recycled Claim Standard',
+    issuer: 'Control Union',
+    description: 'Transparent communication, clear labelling',
     icon: '🛡️',
     imgUrl:
       'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800',

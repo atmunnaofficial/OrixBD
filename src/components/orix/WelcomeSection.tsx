@@ -4,14 +4,14 @@ export default function WelcomeSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <span className="text-blue-500 text-sm font-semibold uppercase tracking-widest">
-            Welcome to OrixBD Group
+            Welcome to Orix Group
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-3 leading-snug">
             Driving Industrial Innovation & Economic Growth in Bangladesh
           </h2>
           <p className="mt-6 text-slate-400 text-base sm:text-lg leading-relaxed">
-            OrixBD Group is a pioneering industrial conglomerate operating
-            across five core business sectors. We are committed to eco-friendly
+            Orix Group is a pioneering industrial conglomerate operating across
+            five core business sectors. We are committed to eco-friendly
             production, high compliance, cutting-edge technology, and delivering
             exceptional value to our global clients and nationwide partners.
           </p>

@@ -5,48 +5,48 @@ import Image from 'next/image';
 
 const slides = [
   {
-    badge: 'State-of-the-Art Industrial Unit',
-    title: 'Orix Group Infrastructure',
+    badge: 'Orix Packaging & Accessories Unit',
+    title: 'Precision Packaging & Carton Solutions',
     description:
-      'A premier conglomerate driving excellence and innovation across automated garment manufacturing and sustainable processing sectors.',
+      'State-of-the-art offset printing, eco-friendly corrugated manufacturing, and automated finishing lines for global brands.',
     image:
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600',
+      'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1600',
   },
   {
-    badge: 'Company Overview',
-    title: 'Orix Washing Project',
+    badge: 'Advanced Manufacturing',
+    title: 'Advanced Corrugated Box Manufacturing',
     description:
-      'A world-class sustainable denim and garment laundering facility powered by global cutting-edge processing technology.',
+      'Heavy-duty 5-ply and 7-ply corrugated carton production with high-speed automated die-cutting technology.',
     image:
-      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600',
+      'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?q=80&w=1600',
   },
   {
-    badge: 'Dual-Process Operations',
-    title: 'Wet Processing Unit',
+    badge: 'High-Definition Offset',
+    title: 'High-Definition Offset Printing Press',
     description:
-      'Heavy-duty industrial wash barrels, enzyme treatments, and eco-friendly softening systems delivering premium handfeel and hues.',
+      'Multi-color Heidelberg presses delivering crystal-clear print quality, sharp graphics, and vibrant Pantone matching.',
     image:
-      'https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=1600',
+      'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1600',
   },
   {
-    badge: 'Advanced Innovation',
-    title: 'Dry Processing Unit',
+    badge: 'Eco-Friendly Materials',
+    title: 'Sustainable Poly & Eco Packaging',
     description:
-      'Precision computerized laser fading, manual scraping, ozone treatment, and 3D resin curing for authentic vintage aesthetics.',
+      'Biodegradable polybags, mailers, and recycled paper packaging designed for eco-conscious global apparel exporters.',
     image:
-      'https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=1600',
+      'https://images.unsplash.com/photo-1530587191325-3db32d826c18?q=80&w=1600',
   },
   {
-    badge: 'Environmental Compliance',
-    title: 'ETP & Zero Liquid Discharge',
+    badge: 'Retail Readiness',
+    title: 'Retail Hangtags & Security Barcodes',
     description:
-      'State-of-the-art Effluent Treatment Plant ensuring up to 80% water recycling and complete adherence to green standards.',
+      'Premium branded hangtags, woven labels, price tickets, and high-security barcode solutions for retail readiness.',
     image:
-      'https://images.unsplash.com/photo-1574943320219-553eb213f72d?q=80&w=1600',
+      'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1600',
   },
 ];
 
-export default function WashingHero() {
+export default function PackagingHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Auto-play slider every 5 seconds
@@ -118,7 +118,7 @@ export default function WashingHero() {
         ❯
       </button>
 
-      {/* Indicators / Dots - Perfectly Positioned (Matching Packaging & Main Page) */}
+      {/* Indicators / Dots - Perfectly Positioned (Not touching bottom edge) */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex space-x-2 sm:space-x-3">
         {slides.map((_, idx) => (
           <button

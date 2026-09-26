@@ -9,14 +9,14 @@ export default function Footer() {
         <div className="md:col-span-1">
           <Link href="/" className="inline-flex items-center space-x-3 mb-4">
             <Image
-              src="/logo.png"
-              alt="OrixBD Group Logo"
+              src="/assets/logo.png"
+              alt="Orix Group Logo"
               width={160}
               height={40}
               className="h-10 w-auto object-contain"
             />
-            <span className="text-2xl font-bold text-white">
-              ORIX<span className="text-blue-500">BD</span>
+            <span className="text-2xl font-bold text-blue-500">
+              OR<span className="text-red-500">i</span>X
             </span>
           </Link>
           <p className="text-sm text-slate-400 leading-relaxed">
@@ -103,7 +103,7 @@ export default function Footer() {
       </div>
 
       <div className="text-center text-xs text-slate-500 mt-12 pt-6 border-t border-slate-900">
-        © {new Date().getFullYear()} OrixBD Group. All rights reserved.
+        © {new Date().getFullYear()} Orix Group. All rights reserved.
       </div>
     </footer>
   );

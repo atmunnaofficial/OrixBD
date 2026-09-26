@@ -7,7 +7,7 @@ export default function CoreStrengths() {
             Core Strengths
           </span>
           <h2 className="text-3xl font-extrabold text-white mt-2">
-            Why Partner With OrixBD Group?
+            Why Partner With Orix Group?
           </h2>
         </div>
 

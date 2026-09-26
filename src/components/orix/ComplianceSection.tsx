@@ -9,10 +9,9 @@ export default function ComplianceSection() {
           Committed to Safety, Sustainability & Quality
         </h2>
         <p className="text-slate-400 max-w-3xl mx-auto text-base sm:text-lg mb-12">
-          OrixBD Group adheres strictly to international environmental
-          standards, zero toxic discharge commitments, biological water
-          treatment, and ethical workforce practices across all manufacturing
-          units.
+          Orix Group adheres strictly to international environmental standards,
+          zero toxic discharge commitments, biological water treatment, and
+          ethical workforce practices across all manufacturing units.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

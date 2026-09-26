@@ -1,62 +1,113 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
+const navLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Our Concern', href: '/concerns' },
+  { name: 'Contact Us', href: '/contact' },
+];
+
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
   return (
-    <header className="bg-slate-900 text-white sticky top-0 z-50 border-b border-slate-800">
+    <nav className="sticky top-0 z-50 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          {/* Logo + Company Name */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <Image
-              src="/logo.png"
-              alt="OrixBD Group Logo"
-              width={160}
-              height={40}
-              className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
-              priority
-            />
-            <span className="text-2xl font-black tracking-wider text-blue-500">
-              ORIX<span className="text-white">BD</span>
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-2">
+            <div className="relative h-9 w-9 shrink-0">
+              <Image
+                src="/assets/logo.png"
+                alt="ORIX Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <span className="text-xl sm:text-2xl font-black tracking-wider text-blue-500">
+              OR<span className="text-red-500">i</span>X
             </span>
           </Link>
 
-          {/* Navigation Links */}
-          <nav className="flex space-x-8 items-center">
-            <Link
-              href="/"
-              className="hover:text-blue-400 font-medium transition">
-              Home
-            </Link>
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors duration-200 ${
+                    isActive
+                      ? 'text-blue-500 font-semibold'
+                      : 'text-slate-300 hover:text-white'
+                  }`}>
+                  {link.name}
+                </Link>
+              );
+            })}
+          </div>
 
-            <Link
-              href="/about"
-              className="hover:text-blue-400 font-medium transition">
-              About Us
-            </Link>
-
-            <Link
-              href="/concerns"
-              className="hover:text-blue-400 font-medium transition">
-              Our Concerns
-            </Link>
-
-            <Link
-              href="/contact"
-              className="hover:text-blue-400 font-medium transition">
-              Contact
-            </Link>
-
-            <Link
-              href="/washing"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition">
-              Washing Unit
-            </Link>
-          </nav>
+          {/* Mobile Menu Button (Hamburger) */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg bg-slate-900 border border-slate-800"
+              aria-label="Toggle Menu">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24">
+                {isOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-    </header>
+
+      {/* Mobile Navigation Drawer */}
+      {isOpen && (
+        <div className="md:hidden bg-slate-950 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3 shadow-2xl">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={`block px-4 py-2.5 rounded-xl text-base font-medium transition-colors ${
+                  isActive
+                    ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30'
+                    : 'text-slate-300 hover:bg-slate-900 hover:text-white'
+                }`}>
+                {link.name}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </nav>
   );
 }
