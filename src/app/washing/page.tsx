@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import WashingHero from '@/components/washing/WashingHero';
 import WashingGallery from '@/components/washing/WashingGallery';
 import MachineryGrid from '@/components/washing/MachineryGrid';
@@ -45,13 +47,13 @@ export default function WashingPage() {
         <MachineryGrid machinery={washingMachinery} />
 
         {/* Specialized Services */}
-        <ServiceDetailGrid services={washingServices} />
+        <ServiceDetailGrid services={washingServices as any} />
 
         {/* Advanced Dry Processing Unit */}
         <ProcessSteps
           badge="Dry Processing"
           title={dryProcessData.title || 'Advanced Dry Processing Unit'}
-          subtitle={dryProcessData.description}
+          subtitle={dryProcessData.subtitle}
           steps={dryProcessData.steps}
         />
 
@@ -59,12 +61,12 @@ export default function WashingPage() {
         <ProcessSteps
           badge="Wet Processing"
           title={wetProcessData.title || 'Advanced Wet Processing Unit'}
-          subtitle={wetProcessData.description}
+          subtitle={wetProcessData.subtitle}
           steps={wetProcessData.steps}
         />
 
         {/* Plant Specifications */}
-        <TechSpecsTable specs={washingSpecs} />
+        <TechSpecsTable specs={washingSpecs as Record<string, any>} />
 
         {/* Global Buyers & Partners */}
         <WashingBuyerLogos buyers={washingBuyers} />
@@ -72,7 +74,7 @@ export default function WashingPage() {
         {/* Client Testimonials */}
         <TestimonialsSection testimonials={washingTestimonials} />
 
-        {/* FAQ Section (Component will now render all complete FAQs automatically) */}
+        {/* FAQ Section */}
         <FaqSection />
 
         {/* CTA Banner */}

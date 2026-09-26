@@ -1,11 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+interface SpecItem {
+  label?: string;
+  title?: string;
+  name?: string;
+  value?: string;
+  desc?: string;
+  detail?: string;
+  specification?: string;
+}
+
 interface TechSpecsTableProps {
-  specs?: any;
+  specs?: SpecItem[] | Record<string, any> | unknown;
 }
 
 export default function TechSpecsTable({ specs }: TechSpecsTableProps) {
   // Real Plant Specifications Data
-  const defaultSpecs = [
+  const defaultSpecs: SpecItem[] = [
     { label: 'Total Factory Floor Area', value: '120,000 sq. ft.' },
     { label: 'Daily Production Capacity', value: '45,000 - 50,000 Pieces' },
     {
@@ -28,16 +38,15 @@ export default function TechSpecsTable({ specs }: TechSpecsTableProps) {
     },
   ];
 
-  // Use any[] to avoid strict type mismatch error in TypeScript
-  let specsList: any[] = defaultSpecs;
+  let specsList: SpecItem[] = defaultSpecs;
 
   if (specs) {
     if (Array.isArray(specs) && specs.length > 0) {
-      specsList = specs;
-    } else if (typeof specs === 'object' && Object.keys(specs).length > 0) {
+      specsList = specs as SpecItem[];
+    } else if (typeof specs === 'object' && specs !== null) {
       const values = Object.values(specs);
-      if (values.length > 0 && typeof values[0] === 'object') {
-        specsList = values;
+      if (values.length > 0) {
+        specsList = values as SpecItem[];
       }
     }
   }
@@ -55,7 +64,7 @@ export default function TechSpecsTable({ specs }: TechSpecsTableProps) {
 
       <div className="max-w-4xl mx-auto bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
         <div className="divide-y divide-slate-800">
-          {specsList.map((item: any, idx: number) => (
+          {specsList.map((item: SpecItem, idx: number) => (
             <div
               key={idx}
               className="p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 hover:bg-slate-800/40 transition-colors">
