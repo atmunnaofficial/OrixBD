@@ -411,24 +411,44 @@ export const washingSpecs = {
   title: 'Comprehensive Plant Specifications',
   specs: [
     {
-      parameter: 'Daily Production Capacity',
-      value: '45,000+ Pcs/Day',
-      detail: 'Bulk automated lines',
-    },
-    {
-      parameter: 'Total Plant Floor Area',
-      value: '75,000 Sq. Ft.',
+      parameter: 'Total Factory Floor Area',
+      value: '120,000 sq. ft.',
       detail: 'Purpose-built industrial layout',
     },
     {
-      parameter: 'ETP Water Recovery Rate',
-      value: '80% Recycling',
+      parameter: 'Daily Production Capacity',
+      value: '45,000 - 50,000 Pieces',
+      detail: 'Bulk automated lines',
+    },
+    {
+      parameter: 'Water Treatment Capacity (ETP)',
+      value: '2,500 m³ / Day (ZLD System)',
       detail: 'Zero liquid discharge standard',
     },
     {
-      parameter: 'Total Washing Machines',
-      value: '50+ Heavy Units',
+      parameter: 'Total Machinery Lines',
+      value: '12+ Heavy-Duty Industrial Lines',
       detail: 'Italian, Spanish & US machinery',
+    },
+    {
+      parameter: 'Laser Fading Units',
+      value: '4 Advanced Computerized Stations',
+      detail: 'High-precision processing',
+    },
+    {
+      parameter: 'Ozone Washing Chambers',
+      value: '3 Eco-Friendly Units',
+      detail: 'Sustainable treatment',
+    },
+    {
+      parameter: 'Power Backup Generator',
+      value: '1,500 kVA Uninterrupted Supply',
+      detail: 'Non-stop factory operations',
+    },
+    {
+      parameter: 'Compliance & Standards',
+      value: 'ZDHC Level 3, OEKO-TEX, SEDEX, GOTS',
+      detail: 'Global environmental & safety certified',
     },
   ],
 };
