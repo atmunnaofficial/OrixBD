@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 interface SpecItem {
   label?: string;
+  parameter?: string;
   title?: string;
   name?: string;
   value?: string;
@@ -10,11 +11,11 @@ interface SpecItem {
 }
 
 interface TechSpecsTableProps {
-  specs?: SpecItem[] | Record<string, any> | unknown;
+  specs?: SpecItem[] | { specs?: SpecItem[]; [key: string]: any } | any;
 }
 
 export default function TechSpecsTable({ specs }: TechSpecsTableProps) {
-  // Real Plant Specifications Data
+  // Real Plant Specifications Data fallback
   const defaultSpecs: SpecItem[] = [
     { label: 'Total Factory Floor Area', value: '120,000 sq. ft.' },
     { label: 'Daily Production Capacity', value: '45,000 - 50,000 Pieces' },
@@ -42,11 +43,18 @@ export default function TechSpecsTable({ specs }: TechSpecsTableProps) {
 
   if (specs) {
     if (Array.isArray(specs) && specs.length > 0) {
-      specsList = specs as SpecItem[];
+      specsList = specs;
     } else if (typeof specs === 'object' && specs !== null) {
-      const values = Object.values(specs);
-      if (values.length > 0) {
-        specsList = values as SpecItem[];
+      // Handle nested specs object case (e.g., { title: '...', specs: [...] })
+      if ('specs' in specs && Array.isArray((specs as any).specs)) {
+        specsList = (specs as any).specs;
+      } else {
+        const values = Object.values(specs);
+        if (values.length > 0 && Array.isArray(values[0])) {
+          specsList = values[0] as SpecItem[];
+        } else if (values.length > 0) {
+          specsList = values as SpecItem[];
+        }
       }
     }
   }
@@ -69,15 +77,16 @@ export default function TechSpecsTable({ specs }: TechSpecsTableProps) {
               key={idx}
               className="p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 hover:bg-slate-800/40 transition-colors">
               <span className="text-slate-300 font-medium text-sm sm:text-base">
-                {item?.label ||
+                {item?.parameter ||
+                  item?.label ||
                   item?.title ||
                   item?.name ||
                   `Specification ${idx + 1}`}
               </span>
               <span className="text-blue-400 font-semibold text-sm sm:text-base">
                 {item?.value ||
-                  item?.desc ||
                   item?.detail ||
+                  item?.desc ||
                   item?.specification ||
                   'High Capacity'}
               </span>
