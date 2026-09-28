@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function AboutPage() {
   return (
     <div className="bg-slate-950 text-white py-16 md:py-24">
@@ -51,42 +53,93 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-slate-900 rounded-2xl p-6 text-center border border-slate-800">
-              <div className="w-24 h-24 bg-slate-800 rounded-full mx-auto mb-4 flex items-center justify-center text-blue-400 font-bold text-xl border border-slate-700">
-                MD
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Chairman */}
+            <div className="bg-slate-900 rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <div className="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden mb-6 bg-slate-800 border border-slate-700">
+                  <Image
+                    src="/assets/Chairman.png"
+                    alt="Chairman"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white">Chairman Name</h3>
+                <p className="text-sm text-blue-400 font-semibold mt-1">
+                  Chairman
+                </p>
+                <p className="text-xs text-slate-400 mt-3 leading-relaxed">
+                  Guiding corporate governance and group vision towards
+                  sustainable excellence.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-white">
-                Managing Director
-              </h3>
-              <p className="text-sm text-blue-400 font-medium">Orix Group</p>
-              <p className="text-xs text-slate-400 mt-3">
-                Leading strategic growth and industrial expansion.
-              </p>
             </div>
 
-            <div className="bg-slate-900 rounded-2xl p-6 text-center border border-slate-800">
-              <div className="w-24 h-24 bg-slate-800 rounded-full mx-auto mb-4 flex items-center justify-center text-blue-400 font-bold text-xl border border-slate-700">
-                C
+            {/* Managing Director */}
+            <div className="bg-slate-900 rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <div className="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden mb-6 bg-slate-800 border border-slate-700">
+                  <Image
+                    src="/assets/ManagingDirector.png"
+                    alt="Managing Director"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white">MD Name</h3>
+                <p className="text-sm text-blue-400 font-semibold mt-1">
+                  Managing Director
+                </p>
+                <p className="text-xs text-slate-400 mt-3 leading-relaxed">
+                  Leading strategic growth, industrial expansion, and global
+                  partnerships.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-white">Chairman</h3>
-              <p className="text-sm text-blue-400 font-medium">Orix Group</p>
-              <p className="text-xs text-slate-400 mt-3">
-                Guiding corporate governance and group vision.
-              </p>
             </div>
 
-            <div className="bg-slate-900 rounded-2xl p-6 text-center border border-slate-800">
-              <div className="w-24 h-24 bg-slate-800 rounded-full mx-auto mb-4 flex items-center justify-center text-blue-400 font-bold text-xl border border-slate-700">
-                CEO
+            {/* CEO */}
+            <div className="bg-slate-900 rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <div className="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden mb-6 bg-slate-800 border border-slate-700">
+                  <Image
+                    src="/assets/CEO.jpg"
+                    alt="Chief Executive Officer"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white">CEO Name</h3>
+                <p className="text-sm text-blue-400 font-semibold mt-1">
+                  Chief Executive Officer
+                </p>
+                <p className="text-xs text-slate-400 mt-3 leading-relaxed">
+                  Overseeing factory operations, compliance, and production
+                  quality assurance.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-white">
-                Chief Executive Officer
-              </h3>
-              <p className="text-sm text-blue-400 font-medium">Operations</p>
-              <p className="text-xs text-slate-400 mt-3">
-                Overseeing factory operations and production quality.
-              </p>
+            </div>
+
+            {/* General Manager */}
+            <div className="bg-slate-900 rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <div className="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden mb-6 bg-slate-800 border border-slate-700">
+                  <Image
+                    src="/assets/GeneralManager.jpg"
+                    alt="General Manager"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white">GM Name</h3>
+                <p className="text-sm text-blue-400 font-semibold mt-1">
+                  General Manager
+                </p>
+                <p className="text-xs text-slate-400 mt-3 leading-relaxed">
+                  Managing day-to-day plant operations, workforce safety, and
+                  operational flow.
+                </p>
+              </div>
             </div>
           </div>
         </div>
