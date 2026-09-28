@@ -65,7 +65,9 @@ export default function AboutPage() {
                     className="object-cover object-top"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-white">Chairman Name</h3>
+                <h3 className="text-xl font-bold text-white">
+                  Md. Munir Hossain Chowdhury
+                </h3>
                 <p className="text-sm text-blue-400 font-semibold mt-1">
                   Chairman
                 </p>
@@ -87,7 +89,9 @@ export default function AboutPage() {
                     className="object-cover object-top"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-white">MD Name</h3>
+                <h3 className="text-xl font-bold text-white">
+                  Foiz Md Ferdous Hossain
+                </h3>
                 <p className="text-sm text-blue-400 font-semibold mt-1">
                   Managing Director
                 </p>
@@ -109,7 +113,9 @@ export default function AboutPage() {
                     className="object-cover object-top"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-white">CEO Name</h3>
+                <h3 className="text-xl font-bold text-white">
+                  Mohammad Mohsen
+                </h3>
                 <p className="text-sm text-blue-400 font-semibold mt-1">
                   Chief Executive Officer
                 </p>
@@ -131,7 +137,9 @@ export default function AboutPage() {
                     className="object-cover object-top"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-white">GM Name</h3>
+                <h3 className="text-xl font-bold text-white">
+                  Md. Idris Ali Jony
+                </h3>
                 <p className="text-sm text-blue-400 font-semibold mt-1">
                   General Manager
                 </p>
